@@ -1,0 +1,26 @@
+body {
+    background: url('background2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+#pagetitle {
+    font-family: 'Dancing Script';
+    font size: 30px;
+    font-weight: bold;
+    color: white;
+  }
+#pageheader {
+    font-family: "Fastinate Inline";
+    font-weight: lighter;
+    font-size: 25px;
+    color: white;
+  }
+#moto {
+    font-family: "Fastinate Inline";
+    font-weight: lighter;
+    color: white;
+  }
+
+
