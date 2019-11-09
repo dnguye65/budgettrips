@@ -3,6 +3,8 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="743330350451-750hlhkljre707b7aon9u7bfrn3bmplc.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,7 +32,11 @@
       <li class="nav-item">
           <a class="nav-link" href="login.html"><span class="mb-0 h3" id="pageheader">LOGIN</span></a>
       </li>
+      <li class="nav-item">
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </li>
     </ul>
+      
     </nav>
    </div>
    <br><br>
@@ -52,14 +58,16 @@
           <input type="checkbox" checked="checked" name="remember"> Remember me
         </label><br>
       </div>
-    </form>
+    </form>  
    <div>
     <p id="pagefooter">BUDGET TRIPS INC.</p>
   </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src=script.js></script>
   </body>
 </html>
