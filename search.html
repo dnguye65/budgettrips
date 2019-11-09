@@ -5,10 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>  
     <link rel="stylesheet" href="custom.css">
+    
+
     <title>Budget Trips</title>
+    
+    
   </head>
   <body>
     <div class="container">
@@ -19,26 +23,74 @@
     </div>
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="index.html"><span class="mb-0 h3" id="pageheader">Home</span></a>
+        <a class="nav-link" href="index.html"><span class="mb-0 h3" id="pageheader">HOME</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="search.html"><span class="mb-0 h3" id="pageheader">Vacation Packages</span></a>
+        <a class="nav-link" href="search.html"><span class="mb-0 h3" id="pageheader">VACATION PACKAGES</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="signup.html"><span class="mb-0 h3" id="pageheader">Sign Up</span></a>
+          <a class="nav-link" href="signup.html"><span class="mb-0 h3" id="pageheader">REGISTER</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="login.html"><span class="mb-0 h3" id="pageheader">Login</span></a>
+          <a class="nav-link" href="login.html"><span class="mb-0 h3" id="pageheader">LOGIN</span></a>
       </li>
     </ul>
     </nav>
    </div>
+   <br><br>
+    <form action="/action_page.php">
+    <div class="container search">
+        <h3>Search</h3>
+        <hr>
+        <label for="orig">Origin:</label>
+        <input type="text" id="orig" name="origin" placeholder="City or Airport">
+      
+        <label for="dest">Destination:</label>
+        <input type="text" id="dest" name="destination" placeholder="City or Airport">
+  
+        <p>Departing: <input type="text" id="from" placeholder="mm/dd/yyyy"></p>
+        <p>Returning: <input type="text" id="to" placeholder="mm/dd/yyyy"></p>
+      
+        <label for="adulttravelers">Number of Adult Travelers:</label>
+        <select id="adulttravelers" name="adulttravelers">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        <label for="childtravelers">Number of Child Travelers:</label>
+        <select id="childtravelers" name="childtravelers">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+
+        <br>
+        <button type="submit" class="btn">Search</button>
+      </form>
+  </div>
+   <div>
+    <p id="pagefooter">BUDGET TRIPS INC.</p>
+  </div>
 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="bootstrap-4.3.1-dist//js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#from" ).datepicker();
+      $( "#to" ).datepicker();
+    } );
+    </script>
   </body>
 </html>
