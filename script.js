@@ -19,9 +19,8 @@ function signOut(){
 }
 
 function onSuccess(googleUser) {
-    
-  }
-
+    document.getElementById('name').innerText = "Signed in: " + googleUser.getBasicProfile().getName(); 
+}
 function renderButton() {
     gapi.signin2.render('g-signin2', {
       'scope': 'profile email',
