@@ -17,3 +17,8 @@ function signOut(){
         $('.profile').css("display","none");
     });
 }
+
+$( function() {
+    $( "#from" ).datepicker();
+    $( "#to" ).datepicker();
+  } );
