@@ -130,3 +130,9 @@ div.containersearchform {
 #profile {
   display: none;
 }
+
+#travelimg{
+  opacity: 0.7;
+  width: 470px;
+  height:350px;
+}
