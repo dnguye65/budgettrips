@@ -4,6 +4,7 @@ function onSignIn(googleUser) {
     $(".profile").css("display","block");
     $("#usericon").attr('src', profile.getImageUrl());
     $("#emailAdd").text(profile.getEmail());
+    $("#name").text(profile.getName());
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
@@ -18,9 +19,6 @@ function signOut(){
     });
 }
 
-function onSuccess(googleUser) {
-    document.getElementById('name').innerText = "Signed in: " + googleUser.getBasicProfile().getName(); 
-}
 function renderButton() {
     gapi.signin2.render('g-signin2', {
       'scope': 'profile email',
