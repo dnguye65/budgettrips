@@ -133,3 +133,7 @@ div.containersearchform {
 .profile {
   display: none;
 }
+
+#signoutbut {
+  padding: 4px;
+}
