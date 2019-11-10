@@ -137,6 +137,12 @@ div.containersearchform {
   height:350px;
 }
 
+#g-signin {
+  margin: 0 auto;
+  display: flex; 
+  justify-content: center;
+}
+
 #usericon{
-  padding-left: 3px;
+  padding-left: 10px;
 }

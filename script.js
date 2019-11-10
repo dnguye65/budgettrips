@@ -1,6 +1,6 @@
 function onSignIn(googleUser) {
     var profile=googleUser.getBasicProfile();
-    $(".g-signin2").css("display", "none");
+    $(".g-signin2").css("display","none");
     $("#profile").css("display","block");
     $("#usericon").attr('src', profile.getImageUrl());
     $("#emailAdd").text(profile.getEmail());
@@ -19,15 +19,4 @@ function signOut(){
     });
 }
 
-function renderButton() {
-    gapi.signin2.render('g-signin2', {
-      'scope': 'profile email',
-      'width': 240,
-      'height': 50,
-      'longtitle': true,
-      'theme': 'dark',
-      'onsuccess': onSuccess,
-      'onfailure': onFailure
-    });
-}
 
