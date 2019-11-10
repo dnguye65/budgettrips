@@ -19,7 +19,7 @@ function signOut(){
     });
 }
 
-$( function() {
+function() {
     $( "#from" ).datepicker();
     $( "#to" ).datepicker();
-  } );
+  } 
