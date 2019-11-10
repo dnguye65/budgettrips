@@ -4,6 +4,7 @@ function onSignIn(googleUser) {
     $(".profile").css("display","block");
     $("#usericon").attr('src', profile.getImageUrl());
     $("#emailAdd").text(profile.getEmail());
+    window.location.href = 'login.html';
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
