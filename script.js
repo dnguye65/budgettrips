@@ -17,6 +17,7 @@ function signOut(){
     auth2.signOut().then(function(){
         $('.g-signin2').css("display","block");
         $('#profile').css("display","none");
+        $(".jumbotron").css("display","block")
     });
 }
 
