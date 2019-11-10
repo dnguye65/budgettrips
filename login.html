@@ -35,16 +35,32 @@
     </nav>
    </div>
    <br><br>
-   <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div class="profile">
-      <h1 id="name">Profile</h1>
+      <h1 id="name"></h1>
+      <br><br>
       <img id="usericon" class="img-circle">
+      <br>
       <p>Email Address</p>
-      <p id="emailAdd" class="alert alert-danger"> </pid></p>
+      <p id="emailAdd" class="alert alert-danger"> </pid></p> 
+      <br><br>
       <div class="profile" id="signoutbut"><button onclick="signOut()" type="button" class="btn btn-outline-primary">Sign Out</button></div>
-    </div>
+    </div>-->
+    <div class="card" id="profile" style="width: 18rem;">
+        <h1 id="name"></h1>
+        <br><br>
+        <img id="usericon" class="img-circle">
+        <div class="card-body">
+          <h5 class="card-title">Email Address:</h5>
+          <p class="card-text" id="emailAdd"></p>
+          <h5 class="card-title">Previous Searches</h5>
+          <p class="card-text">This contain search histories that you've made</p>
+          <br><br>
+          <div id="profile"><button onclick="signOut()" type="button" class="btn btn-outline-primary">Sign Out</button></div>
+        </div>
+      </div>
 
-    
+      <br><br>
 
 
 

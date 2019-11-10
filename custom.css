@@ -127,11 +127,7 @@ div.containersearchform {
   font-weight: bold;
 }
 
-.profile {
+#profile {
   display: none;
   color: white;
-}
-
-#signoutbut {
-  padding: 4px;
 }
