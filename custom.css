@@ -143,12 +143,6 @@ div.containersearchform {
   justify-content: center;
 }
 
-#g-signin {
-  margin: 0 auto;
-  display: flex; 
-  justify-content: center;
-}
-
 #usericon{
   margin: 0 auto;
   display: flex; 
