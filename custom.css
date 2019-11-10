@@ -129,6 +129,9 @@ div.containersearchform {
 
 #profile {
   display: none;
+  margin: 0 auto;
+  display: flex; 
+  justify-content: center;
 }
 
 #travelimg{
@@ -137,6 +140,7 @@ div.containersearchform {
   height:350px;
 }
 
+
 #g-signin {
   margin: 0 auto;
   display: flex; 
@@ -144,5 +148,8 @@ div.containersearchform {
 }
 
 #usericon{
-  padding-left: 10px;
+  margin: 0 auto;
+  display: flex; 
+  justify-content: center;
+  padding-left:20px;
 }

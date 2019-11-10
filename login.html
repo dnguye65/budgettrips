@@ -46,17 +46,21 @@
       <div class="profile" id="signoutbut"><button onclick="signOut()" type="button" class="btn btn-outline-primary">Sign Out</button></div>
     </div>-->
     <br><br>
+    <div>
+    
     <div class="g-signin2" id="g-signin" data-onsuccess="onSignIn"></div>
+
+    </div>
     <div class="col d-flex justify-content-center"><div class="card" id="profile" style="width: 30rem;">
         <h1 class="text-center" id="name"></h1>
         <br>
         <img id="usericon" class="img-circle justify-content-center">
         <div class="card-body">
-          <h5 class="card-title">Email Address:</h5>
+          <h5 class="card-title text-center">Email Address:</h5>
           <p class="card-text" id="emailAdd"></p>
-          <h5 class="card-title">Previous Searches</h5>
-          <p class="card-text">This contain search histories that you've made</p>
-          <button onclick="signOut()" class="btn btn-outline-primary">Sign Out</button>
+          <h5 class="card-title text-center">Previous Searches</h5>
+          <p class="card-text">You do not have any previous search histories</p>
+          <button onclick="signOut()" class="btn">Sign Out</button>
         </div>
       </div>
       </div>
