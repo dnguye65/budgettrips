@@ -154,3 +154,14 @@ div.containersearchform {
   justify-content: center;
   padding-left:20px;
 }
+
+.card {
+  background-color:#434d56;
+  
+}
+
+.card-title {
+  color: white;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 400;
+}
