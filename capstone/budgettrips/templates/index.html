@@ -1,0 +1,82 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-signin-client_id" content="743330350451-750hlhkljre707b7aon9u7bfrn3bmplc.apps.googleusercontent.com">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>  
+    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Budget Trips</title>
+  </head>
+  <body>
+    <div class="container">
+    <nav class="navbar navbar-expand-md">
+    <!-- Links -->
+    <div>
+      <a class="navbar-brand" href="index.html"><span class="mb-0 h1" id="pagetitle">Budget Trips</span></a>
+    </div>
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><span class="mb-0 h3" id="pageheader">HOME</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="search.html"><span class="mb-0 h3" id="pageheader">VACATION PACKAGES</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="login.html"><span class="mb-0 h3" id="pageheader">LOGIN</span></a>
+      </li>
+    </ul>
+    </nav>
+   </div>
+   <br>
+   <!--
+    <div class="container p-5">
+          <h1 class="text-center mt-5 pt-5" id="moto">LIVE. LOVE. EXPERIENCE.</h1>
+          <h2 class="text-center mt-5 pt-5" id="moto">EXPERIENCE the world on a budget-friendly dream vacation with Budget Trips!</h2>
+          <button href="search.html" type="submit" class="btn">Search Now</button>
+          
+    </div> -->
+    <div class="card-group">
+        <div class="card">
+          <img src="{% static "images/travel1.jpg" %} "class="card-img-top" id="travelimg">
+          <div class="card-body">
+            <h2 class="card-title text-center">LIVE</h2>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static "images/travel2.jpg" %}" class="card-img-top" id="travelimg">
+          <div class="card-body">
+            <h2 class="card-title text-center">LOVE</h2>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static "images/travel3.png" %}" class="card-img-top" id="travelimg">
+          <div class="card-body">
+            <h2 class="card-title text-center">EXPERIENCE</h2>
+          </div>
+        </div>
+      </div>
+    <div>
+    <div>
+    <br><br><br>
+   <!-- <button href="search.html" type="submit" id="searchbut" class="btn">Search Now!</button> -->
+    <a class="btn" href="search.html" id="searchbut"><span>Search Now!</span></a>
+    </div>
+      <p id="pagefooter">BUDGET TRIPS INC.</p>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="{% static "js/script.js" %}"></script>
+
+  </body>
+</html>
