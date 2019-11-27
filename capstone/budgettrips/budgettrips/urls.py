@@ -24,5 +24,5 @@ urlpatterns = [
     path('search.html', views.search),
     path('results.html', views.results),
     path('login.html', views.login),
-    path('', views.parameters, name="script")
+    path('submit/', views.parameters, name="script")
 ]

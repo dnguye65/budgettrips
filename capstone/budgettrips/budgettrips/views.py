@@ -13,12 +13,6 @@ def results(request):
 def login(request):
     return render(request, 'login.html')
 
-def output(request):
-    data=requests.get("https://reqres.in/api/users")
-    print(data.text)
-    data = data.text
-    return render(request, 'home.html', {'data':data})
-
 def parameters(request):
     origin = request.POST.get('origin', None)
     destination = request.POST.get('destination', None)
@@ -28,5 +22,5 @@ def parameters(request):
     child = request.POST.get('childtravelers', None)
     budget = request.POST.get('budget', None)
 
-    results = [origin, destination, depart, returnD, adult, child, budget]
-    return render(request, 'results.html', {"Results":results})
+    result = [origin, destination, depart, returnD, adult, child, budget]
+    return render(request, 'results.html', {"result":result})
