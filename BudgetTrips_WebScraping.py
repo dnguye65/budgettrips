@@ -212,114 +212,6 @@ def alaskan_airlines_search(tripType, start, end, budget, passengers, depart, re
     return flightSlice
 
 
-def sw_search(tripType, start, end, budget, passengers, depart, returnD):
-     
-    ## A large block of this code is almost exactly the same as the aa_search definition.
-    ## The only differences are the element names and Xpaths
-    driver.save_screenshot("SW_test.png")
-    
-    tripType = driver.find_element_by_xpath("/html/body/div[2]/div/div/div/div[2]/div[2]/div/div/div/div/div/div/div[3]/span/div/div/div[2]/div/div/div/form/div[1]/div[1]/fieldset/ul/li[2]/label/span")
-    tripType.click()
-    
-    driver.find_element_by_id("LandingAirBookingSearchForm_originationAirportCode").clear()
-    start = driver.find_element_by_id("LandingAirBookingSearchForm_originationAirportCode")
-    start.send_keys(startLoc)
-    driver.find_element_by_id("LandingAirBookingSearchForm_destinationAirportCode").clear()
-    end = driver.find_element_by_id("LandingAirBookingSearchForm_destinationAirportCode")
-    end.send_keys(endLoc)
-    driver.save_screenshot("End Location_sw.png")
-
-    
-    depart = driver.find_element_by_id("LandingAirBookingSearchForm_departureDate")
-    depart.clear()
-    depart.send_keys(leaveDate)
-    
-    
-    #returnDate = driver.find_element_by_xpath("//*[@id='LandingAirBookingSearchForm_returnDate']")
-    #returnDate.clear()
-    #returnDate.send_keys(returnDate)
-    
-    passenger = driver.find_element_by_id("LandingAirBookingSearchForm_adultPassengersCount")
-    passenger.click()
-    passenger.send_keys(num)
-    
-    driver.save_screenshot("fill_sw.png")
-    
-    submit = driver.find_element_by_xpath("//*[@id='LandingAirBookingSearchForm_submit-button']")
-    submit.click()
-    
-    time.sleep(20)
-    driver.save_screenshot("submitted_sw.png")
-    
-    ## If there are no flights, simply prints the message and exits the definition.
-    ## Might be a good idea to add something more meaniful here once the base of the script is built
-    ## and tested with the website.
-    try:
-        driver.find_element_by_class_name('FlightCell')
-    except:
-        print("There are no flights")
-        return
-    
-    ## Targets the table which contains a record of all flights found through the search and
-    ## populates a list with WebElement objects for each flight found. Used to determine how many
-    ## flights there are and how many prices expected to be added to the priceList list object    
-    flightTable = driver.find_element_by_id('MatrixTable0')
-    flightList = flightTable.find_elements_by_tag_name('tr')
-    
-    ## Based on the amount of flights found, the script will pull the price of each one and add it to the
-    ## priceList list object. Then based on the budget of the user, only those that fall within the desired
-    ## value will be considered to be displayed. If the budget is met, it will record the flight leave time,
-    ## flight arrival time, and price into another list to be displayed to the user
-    i=1
-    layover = False
-    layover2 = False
-    flightSlice = []
-    
-    while i < (len(flightList) - 1):
-        index = str(i)
-        
-        if int(driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[3]/div/label').text.strip('$')) <= budget:
-            
-            ## Issues a try; catch block to determine if there is a layover for this flight. If this Xpath is found, then it means this
-            ## flight has a lay over and the flightSlice will need to reflect that. Otherwise, the flightSlice will just indicate
-            ## a departure and arrival time.
-            try:
-                driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[2]/div/div[7]')
-                layover = True
-                try:
-                    driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[3]/div/div[7]')
-                    layover2 = True
-                except:
-                    layover2 = False
-            except:
-                layover = False
-            
-            if layover == True and layover2 == False:
-                flightSlice.append({"Airline": "Alaska Airlines",
-                                    "Price": "$"+driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[3]/div/label').text.strip('$'), 
-                                    "Leave Time ": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[1]/div/div[7]').text, 
-                                    "Layover Arrival Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[1]/div/div[9]').text,
-                                    "Layover Airport": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[1]/div/div[8]').text,
-                                    "Layover Departure Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[2]/div/div[7]').text,
-                                    "Destination Arrival Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[2]/div/div[9]').text})
-            elif layover == True and layover2 == True:
-                flightSlice.append({"Airline": "Alaska Airlines",
-                                    "Price": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[3]/div/label').text, 
-                                    "Leave Time ": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[1]/div/div[7]').text, 
-                                    "First Layover Arrival Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[1]/div/div[9]').text,
-                                    "First Layover Destination": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[1]/div/div[8]').text,
-                                    "First Layover Departure Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[2]/div/div[7]').text,
-                                    "Second Layover Arrival Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[2]/div/div[9]').text,
-                                    "Second Layover Destination:": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[2]/div/div[8]').text,
-                                    "Second Layover Departure Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[3]/div/div[7]').text,
-                                    "Destination Arrival Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[3]/div/div[9]').text})
-            else:
-                flightSlice.append({"Airline": "Alaska Airlines",
-                                    "Price": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[3]/div/label').text.strip('$'), 
-                                    "Leave Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[1]/div/div[7]').text, 
-                                    "Arrival Time": driver.find_element_by_xpath('/html/body/div[6]/div[4]/div/form/div[6]/table/tbody/tr['+index+']/td[1]/ul/li[1]/div/div[9]').text})
-                
-        i = i + 1
 
 ## Intended to log errors during run time. Will need to add more functionality for
 ## this to be useful
@@ -354,7 +246,7 @@ driver.set_window_size(1920, 1080)
 
 driver.get("https://www.aa.com/homePage.do")
 time.sleep(5)
-#allFlights.append(aa_search(RoundOrOne, startLoc, endLoc, budget, num, leaveDate, returnDate))
+allFlights.append(aa_search(RoundOrOne, startLoc, endLoc, budget, num, leaveDate, returnDate))
 
 ## Gives the website some time to breath when running the script multiple times in a row.
 ## Opens the homepage of Alaskan Airlines and also creates a screenshot to ensure
@@ -364,13 +256,13 @@ time.sleep(3)
 driver.save_screenshot('homepage.png')
 
 ## Executing the Alaskan Airlines search definition with parameters
-#allFlights.append(alaskan_airlines_search(RoundOrOne, startLoc, endLoc, budget, num, leaveDate, returnDate))
+allFlights.append(alaskan_airlines_search(RoundOrOne, startLoc, endLoc, budget, num, leaveDate, returnDate))
 
 
-driver.get("https://www.southwest.com/")
-time.sleep(3)
-driver.save_screenshot("homepage.png")
-allFlights.append(sw_search(RoundOrOne, startLoc, endLoc, budget, num, leaveDate, returnDate))
+#driver.get("https://www.jetblue.com/flights")
+#time.sleep(3)
+#driver.save_screenshot("homepage.png")
+#allFlights.append(sw_search(RoundOrOne, startLoc, endLoc, budget, num, leaveDate, returnDate))
 
 
 ## Populates a list with a 2 dimensional array of all searched sites
