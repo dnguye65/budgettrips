@@ -11,6 +11,10 @@
     <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>  
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" type="text/css" media="all"
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <title>Budget Trips</title>
     
     
@@ -41,15 +45,18 @@
         <h3>Search</h3>
         <hr>
         <label for="orig">Origin:</label>
-        <input type="text" id="orig" name="origin" placeholder="City or Airport">
-      
+        <input type="text" id="orig" name="origin" maxlength="3" minlength="3" placeholder="Airport Code">
+   
         <label for="dest">Destination:</label>
-        <input type="text" id="dest" name="destination" placeholder="City or Airport">
-  
-        <p>Departing: <input type="text" id="from" placeholder="mm/dd/yyyy"></p>
-        <p>Returning: <input type="text" id="to" placeholder="mm/dd/yyyy"></p>
-      
-        <label for="adulttravelers">Number of Adult Travelers:</label>
+        <input type="text" id="dest" name="destination" maxlength="3" minlength="3" placeholder="Airport Code">
+        
+        <label for="from">Departing:</label>
+        <input type="text" id="from" placeholder="mm/dd/yyyy">
+
+        <label for="to">Returning:</label>
+        <input type="text" id="to" placeholder="mm/dd/yyyy"> 
+        <br><br>   
+        <label for="adulttravelers">Adults:</label>
         <select id="adulttravelers" name="adulttravelers">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -58,7 +65,7 @@
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <label for="childtravelers">Number of Child Travelers:</label>
+        <label for="childtravelers">Children:</label>
         <select id="childtravelers" name="childtravelers">
           <option value="0">0</option>
           <option value="1">1</option>
@@ -68,10 +75,15 @@
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-
-        <br>
-        <button type="submit" class="btn">Search</button>
+        <br><br>
+        <label for="maxbudg">Max Budget: $</label>
+        <input type="number" id="quantity" min="1" max="10000">
+        <br><br>
+        <div class="btnholder">
+          <button type="submit" class="btn">Search</button>
+        </div> 
       </form>
+
   </div>
   <br><br>
    <div>
@@ -88,7 +100,8 @@
     <script src=script.js></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
     $( function() {
     $( "#from" ).datepicker();
