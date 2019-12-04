@@ -1,0 +1,101 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-signin-client_id" content="743330350451-750hlhkljre707b7aon9u7bfrn3bmplc.apps.googleusercontent.com">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>  
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+    <link rel="stylesheet" type="text/css" media="all"
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>Budget Trips</title>
+    
+    
+  </head>
+  <body>
+    <div class="container">
+    <nav class="navbar navbar-expand-md">
+    <!-- Links -->
+    <div>
+      <a class="navbar-brand" href="index.html"><span class="mb-0 h1" id="pagetitle">Budget Trips</span></a>
+    </div>
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><span class="mb-0 h3" id="pageheader">HOME</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="search.html"><span class="mb-0 h3" id="pageheader">VACATION PACKAGES</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="login.html"><span class="mb-0 h3" id="pageheader">LOGIN</span></a>
+        </li>
+    </ul>
+    </nav>
+   </div>
+   <br>
+    <form action="/submit/" method="POST">
+      {% csrf_token %}
+    <div class="container search">
+        <h3>Search</h3>
+        <hr>
+        <label for="orig">Origin:</label>
+        <input type="text" id="orig" name="origin" maxlength="3" minlength="3" placeholder="Airport Code" required>
+   
+        <label for="dest">Destination:</label>
+        <input type="text" id="dest" name="destination" maxlength="3" minlength="3" placeholder="Airport Code" required>
+        
+        <label for="from">Departing:</label>
+        <input type="text" id="from" name="depart" placeholder="yyyy-mm-dd" required>
+
+        <label for="to">Returning:</label>
+        <input type="text" id="to" name="return" placeholder="yyyy-mm-dd" required> 
+        <br><br>   
+        <label for="adulttravelers">Adults:</label>
+        <select id="adulttravelers" name="adulttravelers">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+
+        <br><br>
+        <label for="maxbudg">Max Budget: $</label>
+        <input type="number" id="quantity" name="budget" min="1" max="10000">
+        <br><br>
+        <div class="btnholder">
+          <button onclick="location.href='{% url 'script' %}'" type="submit" class="btn">Search</button>
+        </div> 
+      </form>
+  </div>
+  <br><br>
+   <div>
+    <p id="pagefooter">BUDGET TRIPS INC.</p>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{% static "js/script.js" %}"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+    $( "#from" ).datepicker({ dateFormat: 'yy-mm-dd' });
+    $( "#to" ).datepicker({ dateFormat: 'yy-mm-dd' });
+     } );
+    </script>
+  </body>
+</html>

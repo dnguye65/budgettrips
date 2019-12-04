@@ -1,0 +1,109 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="743330350451-750hlhkljre707b7aon9u7bfrn3bmplc.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>  
+    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+    <title>Budget Trips</title>
+  </head>
+  <body>
+    <div class="container">
+    <nav class="navbar navbar-expand-md">
+    <!-- Links -->
+    <div>
+      <a class="navbar-brand" href="index.html"><span class="mb-0 h1" id="pagetitle">Budget Trips</span></a>
+    </div>
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><span class="mb-0 h3" id="pageheader">HOME</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="search.html"><span class="mb-0 h3" id="pageheader">VACATION PACKAGES</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html"><span class="mb-0 h3" id="pageheader">LOGIN</span></a>
+
+      </li>
+    </ul>
+      
+    </nav>
+   </div>
+  <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="profile">
+      <h1 id="name"></h1>
+      <br><br>
+      <img id="usericon" class="img-circle">
+      <br>
+      <p>Email Address</p>
+      <p id="emailAdd" class="alert alert-danger"> </pid></p> 
+      <br><br>
+      <div class="profile" id="signoutbut"><button onclick="signOut()" type="button" class="btn btn-outline-primary">Sign Out</button></div>
+    </div>-->
+    <br><br>
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to Budget Trips</h1>
+      <p class="lead">Enjoy a nice, budget-friendly vacation with just a click away!</p>
+      <hr class="my-4">
+      <p>Sign In to your existing Google account to save your search histories</p>
+      <div class="g-signin2" id="g-signin" data-onsuccess="onSignIn"></div>
+    </div>
+    <!--
+    <div>
+    <div class="g-signin2" id="g-signin" data-onsuccess="onSignIn"></div>
+    </div> -->
+    <div class="col d-flex justify-content-center"><div class="card" id="profile" style="width: 30rem;">
+        <h1 class="text-center" id="name"></h1>
+        <br>
+        <img id="usericon" class="img-circle justify-content-center">
+        <div class="card-body">
+          <h5 class="card-title text-center">Email Address:</h5>
+          <p class="card-text text-center" id="emailAdd"></p>
+          <h5 class="card-title text-center">Previous Searches</h5>
+          <p class="card-text">You do not have any previous search histories</p>
+          <button onclick="signOut()" class="btn justify-content-center">Sign Out</button>
+        </div>
+      </div>
+      </div>
+
+      <br><br>
+
+
+
+  <!-- <form action="action_page.php" method="post">
+      <div class="container login">
+        <h3>Login</h3>
+        <hr>
+        <br>
+        <label for="uname"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+    
+        <label for="psw"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        
+        <hr>
+        <br>
+        <button type="submit" class="btn">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label><br>
+      </div>
+    </form>  -->
+   <div>
+    <p id="pagefooter">BUDGET TRIPS INC.</p>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static "js/script.js" %}"></script>
+  </body>
+</html>

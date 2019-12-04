@@ -1,0 +1,193 @@
+body {
+  background: url('/static/images/nightbck.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#pagetitle {
+  font-family: 'Dancing Script';
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+#pageheader {
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  padding: 4px;
+  color: white;
+}
+#moto {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: white;
+}
+#pagefooter {
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  text-align: center;
+  color: white;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:10px;
+  font-size: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.registration {
+  padding: 10px;
+  background-color: white;
+  width: 700px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin: 0px 0 15px 0;
+  border: none;
+  background: #f3f3f3
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: gray;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  width: 25%;
+  justify-content: center;
+}
+
+.btnholder { 
+  text-align: center; 
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: blue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.login {
+  width: 700px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.ui-datepicker {
+  background: whitesmoke;
+}
+
+
+div.containersearchform {
+  border-radius: 5px;
+  width: 700px;
+  padding: 10px;
+  background-color: white;
+}
+
+.containerresults {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  font-size: medium;  
+  padding: 20px;
+  width: 70%;
+  margin-left: 200px;
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+tr:hover {background-color:lightgrey;}
+
+.login {
+  width: 700px;
+  padding: 10px;
+  background-color: white;
+  
+}
+
+.search {
+  width: 700px;
+  padding: 10px;
+  background-color: white;
+  font-weight: bold;
+}
+
+#profile {
+  display: none;
+}
+
+#travelimg{
+  opacity: 0.7;
+  width: 470px;
+  height:350px;
+}
+
+#searchbut{
+  margin: 0 auto;
+  display: flex; 
+  justify-content: center;
+}
+
+#usericon{
+  margin: 0 auto;
+  display: flex; 
+  justify-content: center;
+  padding-left:20px;
+}
+
+.card {
+  background-color:#434d56;
+  
+}
+
+.card-title {
+  color: white;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 400;
+}
